@@ -1,3 +1,4 @@
+varun
 # Journal des interactions
 
 Ce journal contient une transcription (résumée) des échanges entre l'utilisateur et l'assistant.
