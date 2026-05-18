@@ -72,3 +72,16 @@ Reflect on:
 * technical growth
 * workflow improvements
 * Strengths and limitations of AI-assisted development
+
+---
+
+#### Member 3 — Persistence / Testing / Documentation
+
+This area implements a SQLite-backed persistence layer for documents, embeddings, generated artifacts, and token/request tracking. Key files added under `member3_persistence/`:
+
+- `db.py`, `storage.py`, `tracking.py` — core persistence and tracking logic.
+- `tests/test_persistence.py` — `pytest` tests validating save/retrieve flows.
+- `README.md` and `requirements-member3.txt` — usage and test dependencies.
+
+Design choices: use stdlib `sqlite3` for a lightweight, dependency-free store; JSON-encoded vectors and metadata for portability. Tests focus on reliability and edge-case handling for basic CRUD and tracking flows.
+
