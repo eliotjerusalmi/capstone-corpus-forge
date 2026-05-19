@@ -9,6 +9,7 @@ import Quiz from "./pages/Quiz"
 import Reports from "./pages/Reports"
 import PromptSteering from "./pages/PromptSteering"
 import CostDashboard from "./pages/CostDashboard"
+import Learn from "./pages/Learn"
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/reports" element={<Reports />} />
         <Route path="/prompt" element={<PromptSteering />} />
         <Route path="/costs" element={<CostDashboard />} />
+        <Route path="/learn" element={<Learn />} />
       </Routes>
     </BrowserRouter>
   )

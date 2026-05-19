@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Home() {
+  const navigate = useNavigate()
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl w-full text-center space-y-8">
@@ -22,6 +24,7 @@ export default function Home() {
         <div className="pt-4 sm:pt-6">
           <button
             type="button"
+            onClick={() => navigate("/upload")}
             className="px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
             Get Started
@@ -32,6 +35,7 @@ export default function Home() {
         <div>
           <button
             type="button"
+            onClick={() => navigate("/learn")}
             className="text-slate-300 hover:text-white font-medium transition-colors duration-300 underline underline-offset-4"
           >
             Learn More →
@@ -40,62 +44,37 @@ export default function Home() {
 
         {/* Navigation Links */}
         <div className="pt-6 flex flex-col space-y-3">
-          <Link 
-            to="/upload" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/upload" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Go to Upload →
           </Link>
 
-          <Link 
-            to="/documents" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/documents" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Manage Documents →
           </Link>
 
-          <Link 
-            to="/chat" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/chat" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Chat →
           </Link>
 
-          <Link 
-            to="/flashcards" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/flashcards" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Flashcards →
           </Link>
 
-          <Link 
-            to="/quiz" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/quiz" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Quiz →
           </Link>
 
-          <Link 
-            to="/reports" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/reports" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Reports →
           </Link>
 
-          <Link 
-            to="/prompt" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/prompt" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Prompt Steering →
           </Link>
 
-          <Link 
-            to="/costs" 
-            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
-          >
+          <Link to="/costs" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
             Cost Dashboard →
           </Link>
-
         </div>
 
       </div>
