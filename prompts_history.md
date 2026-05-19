@@ -13,3 +13,6 @@
 ### 18-05-2026 16:16
 - **Prompt**: review my entire frontend project.  Check for: - routing issues - missing imports - unused components - broken JSX - folder structure problems - inconsistent naming - missing files referenced in App.jsx - Tailwind class mistakes - React warnings or bad patterns  Then give me: 1. A list of all problems you detect 2. Exact file paths and line numbers 3. The corrected code for each issue 4. A summary of whatâ€™s good and what needs improvement
 
+### 19-05-2026 14:38
+- **Prompt**: Review my entire frontend codebase. Check Upload.jsx, Chat.jsx, Reports.jsx, Flashcards.jsx, Quiz.jsx, and PromptSettings.jsx. Tell me if all the  requirements are implemented correctly: upload UI, corpus management, chat UI, flashcards, quizzes, reports, and prompt settings. Also check for UI bugs, missing states, missing error handling, and Tailwind improvements
+
