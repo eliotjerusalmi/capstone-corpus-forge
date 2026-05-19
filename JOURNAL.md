@@ -110,3 +110,14 @@ Write it clean, professional
 - **Hook Version**: 1.02
 - **Date**: 19-05-2026 14:51
 - **Prompt**: yes
+
+### **New Interaction**
+- **Agent Version**: 2.3
+- **Date**: 19-05-2026 14:52
+- **User**: fathima.gafoor@epita.fr
+- **Prompt**: yes
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.4 mini
+- **Socratic Mode**: OFF
+- **Changes Made**: Refined frontend/README.md into a cleaner product-style document with a stronger overview, clearer feature grouping, concise install steps, and a more polished folder/screenshot section.
+- **Context and Reasons for Changes**: The user approved the next-step polish pass, so the README was updated to read more like a project handoff document rather than a generic app note.

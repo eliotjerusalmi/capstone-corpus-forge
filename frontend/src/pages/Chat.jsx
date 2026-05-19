@@ -5,6 +5,7 @@ export default function Chat() {
     { sender: "ai", text: "Hello! Ask me anything about your corpus." }
   ])
   const [input, setInput] = useState("")
+  const [loading, setLoading] = useState(false)  
 
   const sendMessage = () => {
     if (!input.trim()) return
@@ -15,13 +16,19 @@ export default function Chat() {
     // Clear input
     setInput("")
 
-    // Placeholder AI
+    //  Start loading animation
+    setLoading(true)
+
+    // Simulated AI delay
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
         { sender: "ai", text: "This is where the AI response will appear." }
       ])
-    }, 600)
+
+      //  Stop loading animation
+      setLoading(false)
+    }, 700)
   }
 
   return (
@@ -46,6 +53,13 @@ export default function Chat() {
             {msg.text}
           </div>
         ))}
+
+        {/*  AI Typing Indicator */}
+        {loading && (
+          <div className="max-w-xl px-4 py-3 rounded-lg bg-slate-800 mr-auto text-slate-400 animate-pulse">
+            AI is thinking...
+          </div>
+        )}
       </div>
 
       {/* Input Bar */}

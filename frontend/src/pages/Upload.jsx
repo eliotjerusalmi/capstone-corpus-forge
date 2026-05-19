@@ -2,11 +2,20 @@ import { useState } from "react"
 
 export default function Upload() {
   const [files, setFiles] = useState([])
+  const [isLoading, setIsLoading] = useState(false)   
 
   // Handle file selection
   const handleFileUpload = (event) => {
     const uploaded = Array.from(event.target.files)
-    setFiles((prev) => [...prev, ...uploaded])
+
+    //  Start loading animation
+    setIsLoading(true)
+
+    // Simulate processing delay
+    setTimeout(() => {
+      setFiles((prev) => [...prev, ...uploaded])
+      setIsLoading(false)   //  Stop loading
+    }, 900)
   }
 
   // Remove a file
@@ -44,50 +53,61 @@ export default function Upload() {
           />
         </label>
 
+        {/*  Loading Skeleton */}
+        {isLoading && (
+          <div className="space-y-4">
+            <div className="h-4 bg-slate-700 rounded animate-pulse" />
+            <div className="h-4 bg-slate-700 rounded animate-pulse w-2/3" />
+            <div className="h-4 bg-slate-700 rounded animate-pulse w-1/2" />
+          </div>
+        )}
+
         {/* File List */}
-        <div className="space-y-4">
-          {files.length === 0 ? (
-            <p className="text-slate-500 text-center">
-              No files uploaded yet.
-            </p>
-          ) : (
-            files.map((file, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between bg-slate-800 px-4 py-3 rounded-lg"
-              >
-                <div>
-                  <p className="font-medium">{file.name}</p>
-                  <p className="text-sm text-slate-400">
-                    {(file.size / 1024).toFixed(1)} KB
-                  </p>
+        {!isLoading && (
+          <div className="space-y-4">
+            {files.length === 0 ? (
+              <p className="text-slate-500 text-center">
+                No files uploaded yet.
+              </p>
+            ) : (
+              files.map((file, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between bg-slate-800 px-4 py-3 rounded-lg"
+                >
+                  <div>
+                    <p className="font-medium">{file.name}</p>
+                    <p className="text-sm text-slate-400">
+                      {(file.size / 1024).toFixed(1)} KB
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+
+                    {/* Select for AI toggle */}
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="accent-cyan-400"
+                      />
+                      <span className="text-sm text-slate-300">
+                        Use for AI
+                      </span>
+                    </label>
+
+                    {/* Remove button */}
+                    <button
+                      onClick={() => removeFile(index)}
+                      className="text-red-400 hover:text-red-300 transition"
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-
-                <div className="flex items-center gap-4">
-
-                  {/* Select for AI toggle */}
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="accent-cyan-400"
-                    />
-                    <span className="text-sm text-slate-300">
-                      Use for AI
-                    </span>
-                  </label>
-
-                  {/* Remove button */}
-                  <button
-                    onClick={() => removeFile(index)}
-                    className="text-red-400 hover:text-red-300 transition"
-                  >
-                    Remove
-                  </button>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
+              ))
+            )}
+          </div>
+        )}
 
       </div>
     </div>

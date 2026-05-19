@@ -60,6 +60,42 @@ export default function Home() {
           >
             Chat →
           </Link>
+
+          <Link 
+            to="/flashcards" 
+            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
+          >
+            Flashcards →
+          </Link>
+
+          <Link 
+            to="/quiz" 
+            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
+          >
+            Quiz →
+          </Link>
+
+          <Link 
+            to="/reports" 
+            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
+          >
+            Reports →
+          </Link>
+
+          <Link 
+            to="/prompt" 
+            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
+          >
+            Prompt Steering →
+          </Link>
+
+          <Link 
+            to="/costs" 
+            className="text-cyan-400 hover:text-cyan-200 underline text-lg"
+          >
+            Cost Dashboard →
+          </Link>
+
         </div>
 
       </div>
