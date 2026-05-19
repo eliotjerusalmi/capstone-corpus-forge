@@ -81,6 +81,32 @@ Ce journal contient une transcription (résumée) des échanges entre l'utilisat
 - **Context and Reasons for Changes**: The requested review focused on implementation completeness, missing states, and Tailwind/UI quality rather than code edits.
 
 ### **New Interaction**
+- **Agent Version**: 2.3
+- **Date**: 19-05-2026 14:49
+- **User**: fathima.gafoor@epita.fr
+- **Prompt**: Rewrite my frontend/README.md to describe my actual project instead of the default Vite template.
+Make it clear that all frontend code lives inside the frontend folder.
+Include:
+project overview
+features (upload, corpus manager, chat, flashcards, quizzes, reports, prompt settings)
+optional features (dark mode, word cloud, graphs, loading animations)
+tech stack (React, Vite, TailwindCSS)
+how to install and run the frontend
+folder structure (inside the frontend folder)
+placeholders for screenshots
+Write it clean, professional
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.4 mini
+- **Socratic Mode**: OFF
+- **Changes Made**: Rewrote frontend/README.md to document the actual Corpus Forge frontend, including overview, features, optional UI enhancements, stack, run instructions, folder structure, and screenshot placeholders.
+- **Context and Reasons for Changes**: The README previously contained the default Vite template and did not describe the real application or project layout.
+
+### **New Interaction**
 - **Hook Version**: 1.02
 - **Date**: 19-05-2026 14:47
 - **Prompt**: Rewrite my frontend/README.md to describe my actual project instead of the default Vite template. Make it clear that all frontend code lives inside the frontend folder. Include: project overview features (upload, corpus manager, chat, flashcards, quizzes, reports, prompt settings) optional features (dark mode, word cloud, graphs, loading animations) tech stack (React, Vite, TailwindCSS) how to install and run the frontend folder structure (inside the frontend folder) placeholders for screenshots Write it clean, professional
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 19-05-2026 14:51
+- **Prompt**: yes
