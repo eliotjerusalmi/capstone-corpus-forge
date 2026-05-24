@@ -1,73 +1,122 @@
-# React + TypeScript + Vite
+# Corpus Forge Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The full frontend for Corpus Forge lives in this folder. All React pages, routing, styling, and build tooling are contained inside `frontend`, so this directory is the only place you need to work when changing the user interface.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Corpus Forge is a corpus-centric assistant for managing documents and turning them into interactive experiences. Users can upload content, organize the active corpus, chat with the knowledge base, generate study tools, and review usage analytics from one interface.
 
-## React Compiler
+The frontend is built as a routed single-page application and is structured around the core product workflows:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- document ingestion and corpus management
+- conversational retrieval and AI interaction
+- learning tools such as flashcards and quizzes
+- reporting and prompt steering for experimentation and control
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Upload documents into the corpus workspace
+- Manage corpus files and mark which documents should be used by AI
+- Chat with the corpus through a dedicated conversation screen
+- Review flashcards based on corpus concepts
+- Take quizzes generated from corpus material
+- View reports for usage, activity, and document trends
+- Adjust prompt settings and steering preferences for the assistant
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Optional UI Enhancements
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Dark mode styling
+- Word cloud visualization in reports
+- Graph-style analytics cards and progress bars
+- Loading animations and empty-state placeholders
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tech Stack
+
+- React
+- Vite
+- TailwindCSS
+
+## Install and Run
+
+From the repository root:
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Vite will print a local development URL in the terminal. Open that URL in your browser to view the app.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Folder Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Everything below is inside the `frontend` folder.
+
+```text
+frontend/
+├── public/
+├── src/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.tsx
+│   ├── assets/
+│   ├── hooks/
+│   │   └── useTheme.js
+│   └── pages/
+│       ├── Chat.jsx
+│       ├── CostDashboard.jsx
+│       ├── DocumentManager.jsx
+│       ├── Flashcards.jsx
+│       ├── Home.jsx
+│       ├── PromptSteering.jsx
+│       ├── Quiz.jsx
+│       ├── Reports.jsx
+│       └── Upload.jsx
+├── index.html
+├── package.json
+├── postcss.config.cjs
+├── tailwind.config.cjs
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
+
+
+### Home
+
+![alt text](image.png)
+
+### Upload
+
+![alt text](image-1.png)
+
+### Corpus Manager
+
+![alt text](image-2.png)
+
+### Chat
+
+![alt text](image-3.png)
+
+### Flashcards
+
+![alt text](image-4.png)
+
+### Quiz
+
+![alt text](image-5.png)
+
+### Reports
+
+![alt text](image-6.png)_
+
+### Prompt Settings
+
+![alt text](image-7.png)
+
+### Cost Dashboard
+
+![alt text](image-8.png)
+

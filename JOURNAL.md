@@ -1,3 +1,4 @@
+varun
 # Journal des interactions
 
 Ce journal contient une transcription (résumée) des échanges entre l'utilisateur et l'assistant.
@@ -36,3 +37,88 @@ Ce journal contient une transcription (résumée) des échanges entre l'utilisat
 - **Socratic Mode**: ON
 - **Changes Made**: Activated the journal logger workflow and appended this interaction to JOURNAL.md.
 - **Context and Reasons for Changes**: Kept the repository journal in sync with the current prompt per the workspace instructions.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 18-05-2026 14:52
+- **User**: fathima.gafoor@epita.fr
+- **Prompt**: Review my frontend setup and confirm if I completed all required steps correctly: Vite + React project, Tailwind v4 setup, PostCSS config, Tailwind config, index.css setup, and successful dev server run. Tell me if anything is missing.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 18-05-2026 14:59
+- **Prompt**: Create a clean homepage layout using React + Tailwind. Include a centered hero title, subtitle, and a primary button. Make it responsive and modern.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 18-05-2026 15:21
+- **Prompt**: Fix my App.tsx by removing ONLY the invalid leftover Vite template code that appears after my component. Do NOT change my homepage layout, do NOT rewrite my JSX, and do NOT modify my CSS. Just clean the file so it compiles. The error starts after the closing </div></div></div>) and includes stray </a>, </li>, <li>, and other leftover template tags. Remove only the invalid code and return the corrected file.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 18-05-2026 15:22
+- **Prompt**: Fix my App.tsx by removing ONLY the invalid leftover Vite template code that appears after my component. Do NOT change my homepage layout, do NOT rewrite my JSX, and do NOT modify my CSS. Just clean the file so it compiles. The error starts after the closing </div></div></div>) and includes stray </a>, </li>, <li>, and other leftover template tags. Remove only the invalid code and return the corrected file.
+- **Changes Made**: Removed the dangling Vite template JSX that remained after the homepage component in App.tsx, leaving the layout and CSS untouched.
+- **Context and Reasons for Changes**: The file had valid component markup followed by stray template tags that prevented compilation; this edit restores a clean component boundary.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 18-05-2026 16:16
+- **Prompt**: review my entire frontend project.  Check for: - routing issues - missing imports - unused components - broken JSX - folder structure problems - inconsistent naming - missing files referenced in App.jsx - Tailwind class mistakes - React warnings or bad patterns  Then give me: 1. A list of all problems you detect 2. Exact file paths and line numbers 3. The corrected code for each issue 4. A summary of whatâ€™s good and what needs improvement
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 19-05-2026 14:38
+- **Prompt**: Review my entire frontend codebase. Check Upload.jsx, Chat.jsx, Reports.jsx, Flashcards.jsx, Quiz.jsx, and PromptSettings.jsx. Tell me if all the  requirements are implemented correctly: upload UI, corpus management, chat UI, flashcards, quizzes, reports, and prompt settings. Also check for UI bugs, missing states, missing error handling, and Tailwind improvements
+### **New Interaction**
+- **Agent Version**: 2.3
+- **Date**: 19-05-2026 14:38
+- **User**: fathima.gafoor@epita.fr
+- **Prompt**: Review my entire frontend codebase. Check Upload.jsx, Chat.jsx, Reports.jsx, Flashcards.jsx, Quiz.jsx, and PromptSettings.jsx. Tell me if all the  requirements are implemented correctly: upload UI, corpus management, chat UI, flashcards, quizzes, reports, and prompt settings. Also check for UI bugs, missing states, missing error handling, and Tailwind improvements
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.4 mini
+- **Socratic Mode**: OFF
+- **Changes Made**: No code changes; reviewed the frontend pages and routed screens for requirement coverage and UI issues.
+- **Context and Reasons for Changes**: The requested review focused on implementation completeness, missing states, and Tailwind/UI quality rather than code edits.
+
+### **New Interaction**
+- **Agent Version**: 2.3
+- **Date**: 19-05-2026 14:49
+- **User**: fathima.gafoor@epita.fr
+- **Prompt**: Rewrite my frontend/README.md to describe my actual project instead of the default Vite template.
+Make it clear that all frontend code lives inside the frontend folder.
+Include:
+project overview
+features (upload, corpus manager, chat, flashcards, quizzes, reports, prompt settings)
+optional features (dark mode, word cloud, graphs, loading animations)
+tech stack (React, Vite, TailwindCSS)
+how to install and run the frontend
+folder structure (inside the frontend folder)
+placeholders for screenshots
+Write it clean, professional
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.4 mini
+- **Socratic Mode**: OFF
+- **Changes Made**: Rewrote frontend/README.md to document the actual Corpus Forge frontend, including overview, features, optional UI enhancements, stack, run instructions, folder structure, and screenshot placeholders.
+- **Context and Reasons for Changes**: The README previously contained the default Vite template and did not describe the real application or project layout.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 19-05-2026 14:47
+- **Prompt**: Rewrite my frontend/README.md to describe my actual project instead of the default Vite template. Make it clear that all frontend code lives inside the frontend folder. Include: project overview features (upload, corpus manager, chat, flashcards, quizzes, reports, prompt settings) optional features (dark mode, word cloud, graphs, loading animations) tech stack (React, Vite, TailwindCSS) how to install and run the frontend folder structure (inside the frontend folder) placeholders for screenshots Write it clean, professional
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 19-05-2026 14:51
+- **Prompt**: yes
+
+### **New Interaction**
+- **Agent Version**: 2.3
+- **Date**: 19-05-2026 14:52
+- **User**: fathima.gafoor@epita.fr
+- **Prompt**: yes
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.4 mini
+- **Socratic Mode**: OFF
+- **Changes Made**: Refined frontend/README.md into a cleaner product-style document with a stronger overview, clearer feature grouping, concise install steps, and a more polished folder/screenshot section.
+- **Context and Reasons for Changes**: The user approved the next-step polish pass, so the README was updated to read more like a project handoff document rather than a generic app note.
