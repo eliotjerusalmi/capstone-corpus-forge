@@ -1,18 +1,16 @@
 from __future__ import annotations
+from dotenv import load_dotenv
+from pathlib import Path
+load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
+import google.generativeai as genai
 
 import json
 import os
-from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from fastapi import Body, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-
-try:
-    import openai
-except ImportError:  # pragma: no cover
-    openai = None  # type: ignore
 
 from member3_persistence import storage, tracking
 from member3_persistence.db import Database
@@ -125,16 +123,10 @@ def build_context(document_ids: List[int]) -> str:
 
 
 def openai_generate(prompt: str) -> str:
-    if openai is None or not os.getenv("OPENAI_API_KEY"):
-        raise RuntimeError("OpenAI is not configured")
-    openai.api_key = os.getenv("OPENAI_API_KEY")
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=500,
-        temperature=0.7,
-    )
-    return response.choices[0].message.content.strip()
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    response = model.generate_content(prompt)
+    return response.text.strip()
 
 
 def local_generate(task: str, context: str, prompt: Optional[str], audience: Optional[str], tone: Optional[str]) -> str:
@@ -180,12 +172,12 @@ def generate_text(task: str, document_ids: List[int], prompt: Optional[str], aud
     full_prompt = (
         f"You are an AI assistant.\nTask: {task}\nAudience: {audience or 'general'}\nTone: {tone or 'neutral'}\nFormat: {output_format or 'text'}\nPrompt: {prompt or 'Answer using provided documents.'}\n\nContext:\n{context}"
     )
-    if openai is not None and os.getenv("OPENAI_API_KEY"):
+    if os.getenv("GEMINI_API_KEY"):
         try:
             return openai_generate(full_prompt)
-        except Exception:
-            return local_generate(task, context, prompt, audience, tone)
-    return local_generate(task, context, prompt, audience, tone)
+        except Exception as e:
+            return f"Gemini error: {str(e)}"
+    return "No GEMINI_API_KEY found."
 
 
 @app.on_event("startup")
