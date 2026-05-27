@@ -2,9 +2,8 @@
 
 #### The Team members
 
-* eliot jerusalmi, eliot.jerusalmi@epita.fr,eliotjerusalmi
-varun Saint Ange, varun.saint-ange@epita.fr,varsa7777
-Fathima Gafoor,fathima.gafoor@epita.fr,fathimagafoor2006
+* Names, epita email addresses, and GitHub usernames of all team members.
+
 ---
 
 #### Initial Design
@@ -35,7 +34,7 @@ For each major decision:
 
 Document how AI tools were used.
 
-* we used ai to make a plan and to help us divide the work in three parts so that we can advance on our parts alone. 
+* What tools were used for what purposes?
 * How did AI influence design and implementation decisions?
 * How did AI impact your learning and development process?
 * How did you evaluate AI-generated suggestions?

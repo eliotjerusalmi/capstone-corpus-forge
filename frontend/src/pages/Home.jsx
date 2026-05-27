@@ -1,80 +1,60 @@
 import { Link, useNavigate } from "react-router-dom"
 
+const NAV_ITEMS = [
+  { path: "/upload",    name: "Upload",           hint: "Add files to your corpus" },
+  { path: "/documents", name: "Documents",         hint: "Manage your corpus" },
+  { path: "/chat",      name: "Chat",              hint: "Ask questions" },
+  { path: "/flashcards",name: "Flashcards",        hint: "Study with AI-made cards" },
+  { path: "/quiz",      name: "Quiz",              hint: "Test your knowledge" },
+  { path: "/reports",   name: "Reports",           hint: "Usage stats" },
+  { path: "/prompt",    name: "Prompt settings",   hint: "Tune tone & creativity" },
+  { path: "/costs",     name: "Cost dashboard",    hint: "Track token usage" },
+]
+
 export default function Home() {
-  const navigate = useNavigate()
+  const nav = useNavigate()
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl w-full text-center space-y-8">
-        
-        {/* Hero Title */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600">
-            Welcome Home
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 px-6 py-16">
+      <div className="max-w-3xl mx-auto text-center">
+
+        <h1 className="text-6xl font-bold mb-4">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            Corpus Forge
           </span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 leading-relaxed">
-          Build modern, responsive applications with React and Tailwind CSS.
-          Experience the power of rapid development combined with beautiful design.
+        <p className="text-slate-300 text-lg mb-10 leading-relaxed">
+          Upload your documents and use them as a knowledge base — generate flashcards, take quizzes,
+          and chat with an AI that answers based on your own files.
         </p>
 
-        {/* CTA Button */}
-        <div className="pt-4 sm:pt-6">
+        <div className="flex justify-center gap-3 mb-14">
           <button
-            type="button"
-            onClick={() => navigate("/upload")}
-            className="px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+            onClick={() => nav("/upload")}
+            className="px-7 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-90 text-white font-semibold rounded-lg transition hover:scale-105"
           >
-            Get Started
+            Start uploading
+          </button>
+          <button
+            onClick={() => nav("/chat")}
+            className="px-7 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition"
+          >
+            Open chat
           </button>
         </div>
 
-        {/* Secondary CTA */}
-        <div>
-          <button
-            type="button"
-            onClick={() => navigate("/learn")}
-            className="text-slate-300 hover:text-white font-medium transition-colors duration-300 underline underline-offset-4"
-          >
-            Learn More →
-          </button>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="pt-6 flex flex-col space-y-3">
-          <Link to="/upload" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Go to Upload →
-          </Link>
-
-          <Link to="/documents" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Manage Documents →
-          </Link>
-
-          <Link to="/chat" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Chat →
-          </Link>
-
-          <Link to="/flashcards" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Flashcards →
-          </Link>
-
-          <Link to="/quiz" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Quiz →
-          </Link>
-
-          <Link to="/reports" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Reports →
-          </Link>
-
-          <Link to="/prompt" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Prompt Steering →
-          </Link>
-
-          <Link to="/costs" className="text-cyan-400 hover:text-cyan-200 underline text-lg">
-            Cost Dashboard →
-          </Link>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+          {NAV_ITEMS.map(item => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="block p-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-cyan-700 rounded-xl transition group"
+            >
+              <p className="font-medium text-white group-hover:text-cyan-400 transition text-sm">{item.name}</p>
+              <p className="text-xs text-slate-500 mt-0.5">{item.hint}</p>
+            </Link>
+          ))}
         </div>
 
       </div>
